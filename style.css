@@ -13,3 +13,17 @@ button {
     font-size: 16px;
     cursor: pointer;
 }
+
+/* Base link styling */
+.hover-grey {
+  color: #000000;              /* Default text color */
+  text-decoration: none;       /* Removes the default link underline */
+  display: inline-block;       /* Keeps spacing consistent */
+  transition: color 0.2s ease; /* Creates a smooth transition into grey */
+}
+
+/* Hover state */
+.hover-grey:hover {
+  color: #888888;              /* Greys out the text on hover */
+  cursor: pointer;             /* Displays the clickable hand cursor */
+}
