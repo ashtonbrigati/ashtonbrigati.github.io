@@ -1,20 +1,28 @@
-css
-.redaction-35-regular {
-  font-family: "Redaction 35", serif;
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+/* 1. Register each font file under its own name */
+@font-face {
+  font-family: "Redaction Regular";
+  src: url('./fonts/Redaction35-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Redaction Bold";
   src: url('./fonts/Redaction35-Bold.ttf') format('truetype');
 }
 
-.redaction-35-bold {
-  font-family: "Redaction 35", serif;
-  font-weight: 700;
-  font-style: normal;
+@font-face {
+  font-family: "Redaction Italic";
+  src: url('./fonts/Redaction35-Italic.ttf') format('truetype');
 }
 
-.redaction-35-regular-italic {
-  font-family: "Redaction 35", serif;
-  font-weight: 400;
-  font-style: italic;
+/* 2. Your classes (Only picks the font file—no size, no weight) */
+.redaction-35-regular {
+  font-family: "Redaction Regular", serif;
+}
+
+.redaction-35-bold {
+  font-family: "Redaction Bold", serif;
+}
+
+.redaction-35-italic {
+  font-family: "Redaction Italic", serif;
 }
