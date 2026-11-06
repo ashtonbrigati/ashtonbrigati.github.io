@@ -27,3 +27,10 @@ button {
   color: #888888;              /* Greys out the text on hover */
   cursor: pointer;             /* Displays the clickable hand cursor */
 }
+
+.nav-links {
+  display: flex;
+  flex-direction: column;  /* Stacks links vertically */
+  gap: 16px;               /* Sets exact space between the links */
+  /* align-items: center; */ /* Uncomment this line if you want them centered horizontally */
+}
