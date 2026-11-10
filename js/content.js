@@ -102,8 +102,7 @@ const PROJECTS = [
     role: 'Director, Editor',
     summary: 'A short film about my adoption process as a teenager.',
     description: [
-      'Because of Eachother is a short film about my own adoption, which happened when I was a teenager.',
-      // TODO: add a paragraph or two: why you made it, how you approached telling your own story, screenings or awards.
+      'A short documentary about the filmmaker’s experience of being adopted from foster care. Through an intimate conversation with his mother, a young man traces his journey of growing up and how his friends and community helped him find his home.',
     ],
     video: { type: 'youtube', id: '9w4G4jILxdU' },
     previewStart: 5,         // home-page hover preview plays from this second (YouTube, muted)
