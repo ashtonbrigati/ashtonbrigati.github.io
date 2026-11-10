@@ -137,7 +137,7 @@
       <a class="card reveal" data-id="${esc(p.id)}" href="${SECTIONS[p.section].page}#${esc(p.id)}">
         <div class="card-media">
           ${still(p)}
-          ${p.preview ? `<video muted loop playsinline preload="none" data-src="${esc(p.preview)}"></video>` : ''}
+          ${p.preview ? `<video muted loop playsinline preload="none" data-src="${esc(p.preview)}"${p.thumbPos ? ` style="object-position:${esc(p.thumbPos)}"` : ''}></video>` : ''}
           <span class="card-tag">${esc(p.category)}</span>
           <span class="card-view">View project →</span>
         </div>
