@@ -387,3 +387,13 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .path p { font-size: 15px; }
 }
 .path-body { text-shadow: 0 1px 14px rgba(10,12,16,.75), 0 0 2px rgba(10,12,16,.6); }
+
+/* Four services on the home page: 4 across on wide screens, 2 across on tablets. */
+@media (min-width: 1101px) { .svc-list { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 821px) and (max-width: 1100px) {
+  .svc-list { grid-template-columns: repeat(2, 1fr); }
+  .svc:nth-child(2n) { border-right: 0; }
+  .svc:nth-child(odd) { padding-left: 0; }
+  .svc:nth-child(n+3) { border-top: 1px solid var(--line); }
+}
+.path::before { background: linear-gradient(180deg, rgba(10,12,16,0) 20%, rgba(10,12,16,.55) 55%, rgba(10,12,16,.92) 100%); }

@@ -45,6 +45,9 @@ const SITE = {
   },
 };
 
+// Order of the section previews further down the home page (the panels and menu use the order below).
+const HOME_PREVIEW_ORDER = ['filmmaking', 'client', 'music'];
+
 // The three parts of the portfolio, in menu order. Text here appears on the home page and at the top of each page.
 const SECTIONS = {
   filmmaking: {
@@ -61,8 +64,9 @@ const SECTIONS = {
   music: {
     title: 'Music Videos',
     page: 'music-videos.html',
-    cover: 'glaive-mixed-media',
-    coverImage: 'media/thumbs/glaive-mixed-media.jpg',
+    cover: 'glaive-it-is-what-it-is',
+    coverImage: 'media/thumbs/music-cover.jpg',     // It Is What It Is (glaive), frame at 0:15.95
+    coverPos: '62% 35%',              // keep the red circle in view on the tall panel
     coverLabel: 'Broke Records',      // text shown over that still ('' = none)
     eyebrow: 'Music videos',
     pageEyebrow: '',
@@ -444,6 +448,11 @@ const SERVICES = [
     title: 'Short Film & Documentary',
     blurb: 'Personal, story-driven films from first idea to final cut; directing, shooting and editing.',
     deliverables: ['Pre-production to post-production', 'Directing & cinematography', 'Editing & sound', 'Festival deliverables'],
+  },
+  {
+    title: 'Music Videos',
+    blurb: 'Visuals for artists and labels, from stop-motion and mixed media to TouchDesigner and 3D.',
+    deliverables: ['Music videos & visualizers', 'Stop-motion & mixed media', 'TouchDesigner & After Effects', '3D animation', 'Vertical cuts for TikTok & Reels'],
   },
   {
     title: 'Freelance Editing',

@@ -110,7 +110,7 @@
       const cover = (s.cover && PROJECTS.find((p) => p.id === s.cover)) || list.find(thumbOf);
       return `
       <a class="path reveal" href="${s.page}">
-        ${s.coverImage || cover ? `<img src="${esc(s.coverImage || thumbOf(cover))}" alt="" loading="lazy" style="object-position:50% 30%">` : `<div class="ph" style="--h:${s.hue}"></div>`}
+        ${s.coverImage || cover ? `<img src="${esc(s.coverImage || thumbOf(cover))}" alt="" loading="lazy" style="object-position:${esc(s.coverPos || '50% 30%')}">` : `<div class="ph" style="--h:${s.hue}"></div>`}
         ${s.coverLabel ? `<span class="path-label"><small>Featuring</small>${esc(s.coverLabel)}</span>` : ""}
         <div class="path-body">
           <h2 class="display">${esc(s.title)}</h2>
@@ -136,7 +136,8 @@
       </a>`;
 
     // A preview strip per section: 1 large + 2 small cards
-    $('#previews').innerHTML = Object.entries(SECTIONS).map(([key, s]) => {
+    const previewKeys = (typeof HOME_PREVIEW_ORDER !== 'undefined' ? HOME_PREVIEW_ORDER : Object.keys(SECTIONS)).filter((k) => SECTIONS[k]);
+    $('#previews').innerHTML = previewKeys.map((key) => [key, SECTIONS[key]]).map(([key, s]) => {
       const list = inSection(key);
       const picks = (list.filter((p) => p.featured).length ? list.filter((p) => p.featured) : list).slice(0, 3);
       if (!picks.length) return '';
