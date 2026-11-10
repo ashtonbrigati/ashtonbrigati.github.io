@@ -147,9 +147,10 @@ const PROJECTS = [
     ],
     video: { type: 'tiktok', id: '7603284132398910733' },
     thumb: 'media/thumbs/bleecher.jpg',
+    thumbPos: '8% 50%',      // tall home-page card: show the hand and blue, not the white torso
     preview: '',
     hue: 240,
-    featured: false,
+    featured: 2,
   },
 
   {
@@ -171,7 +172,7 @@ const PROJECTS = [
     thumb: 'media/thumbs/glaive-mixed-media.jpg',
     preview: '',
     hue: 140,
-    featured: true,
+    featured: 1,
   },
 
   {
@@ -338,7 +339,7 @@ const PROJECTS = [
     pageThumbZoom: 1.35,      // lifts the "doritos" text above the play button
     preview: '',
     hue: 35,
-    featured: true,
+    featured: false,
   },
 
   // ---------- Client Work (YouTube + freelance editing) ----------

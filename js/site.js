@@ -152,7 +152,9 @@
     const previewKeys = (typeof HOME_PREVIEW_ORDER !== 'undefined' ? HOME_PREVIEW_ORDER : Object.keys(SECTIONS)).filter((k) => SECTIONS[k]);
     $('#previews').innerHTML = previewKeys.map((key) => [key, SECTIONS[key]]).map(([key, s]) => {
       const list = inSection(key);
-      const picks = (list.filter((p) => p.featured).length ? list.filter((p) => p.featured) : list).slice(0, 3);
+      // featured: true, or a number (1, 2, 3…) to choose the order on the home page.
+      const featured = list.filter((p) => p.featured).sort((a, b) => Number(a.featured) - Number(b.featured));
+      const picks = (featured.length ? featured : list).slice(0, 3);
       if (!picks.length) return '';
       return `
       <section class="section preview" id="${key}">
