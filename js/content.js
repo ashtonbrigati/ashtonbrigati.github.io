@@ -1,5 +1,5 @@
 /* =========================================================================
-   SITE CONTENT — this is the only file you need to edit to update the site.
+   SITE CONTENT: this is the only file you need to edit to update the site.
    -------------------------------------------------------------------------
    VIDEO SOURCES (pick one per project):
      video: { type: 'youtube', id: 'dQw4w9WgXcQ' }      // the bit after watch?v=
@@ -18,11 +18,14 @@
             shifts towards the left. Default is the centre.
    thumbZoom: zoom into the still, e.g. 1.2 (1 = no zoom). Zooms towards thumbPos.
    hue:     colour of the placeholder gradient (0–360) until you add a thumb.
-   section: 'client' or 'filmmaking' — which page the project lives on.
-   category: a sub-type within that section (e.g. 'Brand Film', 'Documentary').
+   section: 'filmmaking', 'music' or 'client' (which page the project lives on).
+   category: a sub-type within that section (e.g. 'Documentary', 'Broke Records').
             Each different category becomes a filter button on that page.
+   artist:  optional; shows an "Artist" line (used for music videos).
    featured: true = shows up in that section's preview on the home page
             (the first 3 featured per section are shown).
+
+   PUNCTUATION: please don't use long dashes (—) in site text.
    ========================================================================= */
 
 const SITE = {
@@ -42,7 +45,7 @@ const SITE = {
   },
 };
 
-// The two halves of the portfolio. Text here appears on the home page and at the top of each page.
+// The three parts of the portfolio, in menu order. Text here appears on the home page and at the top of each page.
 const SECTIONS = {
   filmmaking: {
     title: 'Filmmaking',
@@ -50,10 +53,22 @@ const SECTIONS = {
     cover: 'because-of-eachother',          // which project's still is used on the home-page Filmmaking panel
     coverImage: 'media/thumbs/filmmaking-cover.jpg', // Because of Eachother, candle at 1:45 (4K frame)
     eyebrow: 'Filmmaking',
-    pageEyebrow: '',                  // small label above the big title on the Filmmaking page (empty = hidden)
+    pageEyebrow: '',                  // small label above the big title on the page (empty = hidden)
     headline: 'Stories I needed to tell.',
-    intro: 'Short films, documentaries and music videos — personal work about family, identity and what we choose to keep.',
+    intro: 'Short films and documentaries: personal work about family, identity and what we choose to keep.',
     hue: 228,
+  },
+  music: {
+    title: 'Music Videos',
+    page: 'music-videos.html',
+    cover: 'glaive-mixed-media',
+    coverImage: 'media/thumbs/glaive-mixed-media.jpg',
+    coverLabel: 'Broke Records',      // text shown over that still ('' = none)
+    eyebrow: 'Music videos',
+    pageEyebrow: '',
+    headline: 'Songs, turned into pictures.',
+    intro: 'Commissioned visuals for Broke Records artists, plus my own experiments in stop-motion, mixed media and 3D.',
+    hue: 300,
   },
   client: {
     title: 'Client Work',
@@ -62,9 +77,9 @@ const SECTIONS = {
     coverImage: 'media/thumbs/rocketjump-cover.jpg', // Freddie Wong at 3:17 of the RocketJump video (1080p frame)
     coverLabel: 'RocketJump · Freddie Wong', // text shown over that still ('' = none)
     eyebrow: 'Client work',
-    pageEyebrow: '',                  // small label above the big title on the Client Work page (empty = hidden)
+    pageEyebrow: '',
     headline: 'Made for the people I work with.',
-    intro: 'Videos for Patreon on YouTube and Instagram, and music videos for Broke Records artists.',
+    intro: 'Videos for Patreon on YouTube and Instagram, as camera operator and editor.',
     hue: 205,
   },
 };
@@ -83,7 +98,7 @@ const PROJECTS = [
     summary: 'A short film about my adoption process as a teenager.',
     description: [
       'Because of Eachother is a short film about my own adoption, which happened when I was a teenager.',
-      // TODO: add a paragraph or two — why you made it, how you approached telling your own story, screenings or awards.
+      // TODO: add a paragraph or two: why you made it, how you approached telling your own story, screenings or awards.
     ],
     video: { type: 'youtube', id: '9w4G4jILxdU' },
     previewStart: 5,         // home-page hover preview plays from this second (YouTube, muted)
@@ -95,31 +110,150 @@ const PROJECTS = [
   {
     id: 'buried-in-glass',
     title: 'Buried in Glass',
-    client: '',                // leave empty for personal work; set e.g. 'A24' later and a "Client" line appears
+    client: '',
     section: 'filmmaking',
     category: 'Documentary',
     year: 2025,
     role: 'Director, Editor',
     summary: 'A short documentary on the ethics of preservation, told through taxidermy.',
     description: [
-      'Buried in Glass is a short documentary about what it means to preserve something through any means — told in taxidermy.',
-      // TODO: add more — who you filmed, what you found, how it was received.
+      'Buried in Glass is a short documentary, told through taxidermy, about what it means to preserve something by any means.',
+      // TODO: add more: who you filmed, what you found, how it was received.
     ],
     video: { type: 'youtube', id: 'xY8-MV6cBeE' },
-    previewStart: 0,         // home-page hover preview plays from this second (YouTube, muted)
+    previewStart: 0,
     thumb: 'media/thumbs/buried-in-glass.jpg',   // 4K frame from 1:44
     preview: '',
     hue: 195,
     featured: true,
   },
 
-  // ---------- Filmmaking: music videos (self-initiated) ----------
+  // ---------- Music Videos: commissioned by Broke Records (all 2025) ----------
+  {
+    id: 'glaive-it-is-what-it-is',
+    title: 'It Is What It Is',
+    artist: 'glaive',
+    client: 'Broke Records',
+    section: 'music',
+    category: 'Broke Records',
+    year: 2025,
+    role: 'Editor',
+    summary: 'A mixed-media visual for glaive, commissioned by Broke Records and built in TouchDesigner.',
+    description: [
+      'Commissioned by Broke Records (New York) for glaive’s “It Is What It Is” and posted on my own accounts to build hype for the release. Built in TouchDesigner.',
+      'Flash warning: contains flashing images.',
+    ],
+    video: { type: 'tiktok', id: '7568077670219648311' },
+    thumb: 'media/thumbs/glaive-iiwii-1.jpg',
+    preview: '',
+    hue: 330,
+    featured: false,
+  },
+  {
+    id: 'glaive-it-is-what-it-is-alt',
+    title: 'It Is What It Is (Alternate)',
+    artist: 'glaive',
+    client: 'Broke Records',
+    section: 'music',
+    category: 'Broke Records',
+    year: 2025,
+    role: 'Editor',
+    summary: 'A second, black-and-white take on “It Is What It Is” for glaive and Broke Records.',
+    description: [
+      'An alternate version of my visual for glaive’s “It Is What It Is,” commissioned by Broke Records and built in TouchDesigner.',
+    ],
+    video: { type: 'tiktok', id: '7568224492145675533' },
+    thumb: 'media/thumbs/glaive-iiwii-2.jpg',
+    preview: '',
+    hue: 0,
+    featured: false,
+  },
+  {
+    id: 'broke-records-tiffany-day-breakup',
+    title: 'breakup',
+    artist: 'Tiffany Day',
+    client: 'Broke Records',
+    section: 'music',
+    category: 'Broke Records',
+    year: 2025,
+    role: 'Editor',
+    summary: 'A visual for Tiffany Day’s “breakup,” commissioned by Broke Records.',
+    description: [
+      'Commissioned by Broke Records (New York) for Tiffany Day and posted on my own accounts to build hype for the release.',
+    ],
+    video: { type: 'tiktok', id: '7569903180159520013' },
+    thumb: 'media/thumbs/tiffany-day-breakup.jpg',
+    thumbPos: '70% 50%',      // keep the lyric text in view
+    preview: '',
+    hue: 300,
+    featured: false,
+  },
+  {
+    id: 'broke-records-tiffany-day-breakup-alt',
+    title: 'breakup (Alternate)',
+    artist: 'Tiffany Day',
+    client: 'Broke Records',
+    section: 'music',
+    category: 'Broke Records',
+    year: 2025,
+    role: 'Editor',
+    summary: 'An alternate visual for “breakup,” made in TouchDesigner and After Effects.',
+    description: [
+      'A second take on “breakup” for Tiffany Day and Broke Records, built in TouchDesigner and After Effects.',
+    ],
+    video: { type: 'tiktok', id: '7571975212112137527' },
+    thumb: 'media/thumbs/tiffany-day-breakup-alt.jpg',
+    preview: '',
+    hue: 30,
+    featured: false,
+  },
+  {
+    id: 'broke-records-bleecher',
+    title: 'liar',
+    artist: 'bleecher',
+    client: 'Broke Records',
+    section: 'music',
+    category: 'Broke Records',
+    year: 2025,
+    role: 'Editor',
+    summary: 'A visual for bleecher’s “liar,” commissioned by Broke Records and made in TouchDesigner.',
+    description: [
+      'Commissioned by Broke Records (New York) for bleecher’s “liar” and posted on my own accounts to build hype for the release. Made in TouchDesigner.',
+    ],
+    video: { type: 'tiktok', id: '7603284132398910733' },
+    thumb: 'media/thumbs/bleecher.jpg',
+    preview: '',
+    hue: 240,
+    featured: false,
+  },
+  {
+    id: 'broke-records-itsbast-forget',
+    title: 'gonna make you forget',
+    artist: 'itsbast',
+    client: 'Broke Records',
+    section: 'music',
+    category: 'Broke Records',
+    year: 2025,
+    role: 'Editor',
+    summary: 'A vertical visual for itsbast’s “gonna make you forget,” made through Broke Records.',
+    description: [
+      'Made through Broke Records (New York) for itsbast’s “gonna make you forget” and posted on my own accounts to build hype for the release.',
+    ],
+    video: { type: 'tiktok', id: '7671775930066554126', vertical: true },
+    thumb: 'media/thumbs/itsbast-forget.jpg',
+    preview: '',
+    hue: 320,
+    featured: false,
+  },
+
+  // ---------- Music Videos: personal (uncommissioned) ----------
   {
     id: 'glaive-mixed-media',
-    title: 'glaive — Mixed Media Animation',
+    title: 'Mixed Media Animation',
+    artist: 'glaive',
     client: '',
-    section: 'filmmaking',
-    category: 'Music Video',
+    section: 'music',
+    category: 'Personal',
     year: 2025,
     role: 'Editor, Animator',
     summary: 'A stop-motion, mixed-media visual for an unreleased glaive song, made from his footage online.',
@@ -128,17 +262,19 @@ const PROJECTS = [
       'This is the edit that led to my work with Broke Records.',
     ],
     video: { type: 'youtube', id: '0GfxFXm2AjY' },
+    previewStart: 10,
     thumb: 'media/thumbs/glaive-mixed-media.jpg',
     preview: '',
     hue: 140,
-    featured: false,
+    featured: true,
   },
   {
     id: 'glaive-a-minor-126',
-    title: 'glaive — this song is in a minor at 126 bpm',
+    title: 'this song is in a minor at 126 bpm',
+    artist: 'glaive',
     client: '',
-    section: 'filmmaking',
-    category: 'Music Video',
+    section: 'music',
+    category: 'Personal',
     year: 2025,
     role: 'Editor, Animator, Remix',
     summary: 'An unofficial visualizer for an unreleased glaive song that I remixed and re-edited myself.',
@@ -152,53 +288,17 @@ const PROJECTS = [
     featured: false,
   },
   {
-    id: 'glaive-it-is-what-it-is-1',
-    title: 'glaive — It Is What It Is',
-    client: '',
-    section: 'filmmaking',
-    category: 'Music Video',
-    year: 2025,
-    role: 'Editor',
-    summary: 'A mixed-media edit for glaive’s “It Is What It Is”, made in TouchDesigner.',
-    description: [
-      'A mixed-media edit for glaive’s “It Is What It Is”, built in TouchDesigner.',
-      'Flash warning: contains flashing images.',
-    ],
-    video: { type: 'tiktok', id: '7568077670219648311' },
-    thumb: 'media/thumbs/glaive-iiwii-1.jpg',
-    preview: '',
-    hue: 330,
-    featured: false,
-  },
-  {
-    id: 'glaive-it-is-what-it-is-2',
-    title: 'glaive — It Is What It Is (Pt. 2)',
-    client: '',
-    section: 'filmmaking',
-    category: 'Music Video',
-    year: 2025,
-    role: 'Editor',
-    summary: 'A second, black-and-white take on “It Is What It Is”, made in TouchDesigner.',
-    description: [
-      'A second version of my edit for glaive’s “It Is What It Is”, built in TouchDesigner.',
-    ],
-    video: { type: 'tiktok', id: '7568224492145675533' },
-    thumb: 'media/thumbs/glaive-iiwii-2.jpg',
-    preview: '',
-    hue: 0,
-    featured: false,
-  },
-  {
     id: 'smoke-signals-something-quiet',
-    title: 'smoke signals — something quiet',
+    title: 'something quiet',
+    artist: 'smoke signals',
     client: '',
-    section: 'filmmaking',
-    category: 'Music Video',
+    section: 'music',
+    category: 'Personal',
     year: 2025,
     role: 'Editor, Motion Designer',
     summary: 'An experiment recreating printed mixed media digitally in After Effects, with an almost watercolour look.',
     description: [
-      'A visual edit in the same style as my mixed-media work, but made entirely digitally: an experiment recreating the look of printed mixed media in After Effects, which came out almost like watercolour.',
+      'A visual edit in the style of my mixed-media work, but made entirely on the computer. It was an experiment in recreating the look of printed mixed media in After Effects, and it came out almost like watercolour.',
     ],
     video: { type: 'youtube', id: 'Z86x8cV9PG0' },
     thumb: 'media/thumbs/smoke-signals-something-quiet.jpg',
@@ -208,27 +308,29 @@ const PROJECTS = [
   },
   {
     id: '100-gecs-doritos-fritos',
-    title: '100 gecs — Doritos & Fritos',
+    title: 'Doritos & Fritos',
+    artist: '100 gecs',
     client: '',
-    section: 'filmmaking',
-    category: 'Music Video',
+    section: 'music',
+    category: 'Personal',
     year: 2025,
     role: '3D Animator',
-    summary: 'A fan-made 3D animated music video, made for fun.',
+    summary: 'An uncommissioned 3D animated music video, made for fun.',
     description: [
-      'A fan-made 3D animated music video for 100 gecs’ “Doritos & Fritos”, made for fun.',
+      'An uncommissioned 3D animated video for 100 gecs’ “Doritos & Fritos,” which I made for fun.',
     ],
     video: { type: 'youtube', id: 'lYc-jKtyGzU' },
+    previewStart: 20,
     thumb: 'media/thumbs/100-gecs-doritos-fritos.jpg',
+    thumbPos: '15% 50%',     // keep the chip in view on the tall home-page card
     preview: '',
     hue: 35,
-    featured: false,
+    featured: true,
   },
 
   // ---------- Client Work (YouTube + freelance editing) ----------
   // One entry per video works best. Duplicate this block for each Patreon video you want to show.
   // For a freelance editing job, use the same block with:  client: 'Who it was for',  category: 'Editing',  role: 'Editor'
-  // Once there are two categories (YouTube + Editing), filter buttons appear on the Client Work page.
   {
     id: 'leap-from-youtube-to-movies',
     title: 'Making the Leap from YouTube to Movies',
@@ -243,7 +345,7 @@ const PROJECTS = [
       // TODO: add a line about the video and what the shoot or edit involved.
     ],
     video: { type: 'youtube', id: 'RjP3mTiei54' },
-    previewStart: 30,         // home-page hover preview plays from this second (YouTube, muted)
+    previewStart: 30,
     thumb: '',
     thumbPos: '50% 10%',     // keep the 'Essays → Movies' text in view on wide crops
     preview: '',
@@ -304,7 +406,7 @@ const PROJECTS = [
       // TODO: add a line on what you worked on at Patreon and what the video covers.
     ],
     video: { type: 'youtube', id: 'P87QwEsh3H0' },
-    previewStart: 30,         // home-page hover preview plays from this second (YouTube, muted)
+    previewStart: 30,
     thumb: '',
     thumbPos: '50% 20%',     // keep the PATREON lettering in view on the wide home-page card
     preview: '',
@@ -329,81 +431,6 @@ const PROJECTS = [
     preview: '',
     hue: 225,
     featured: false,          // kept off the home page until it has a real still
-  },
-
-  // ---------- Client Work: music videos for Broke Records ----------
-  {
-    id: 'broke-records-tiffany-day-breakup',
-    title: 'Tiffany Day — breakup',
-    client: 'Broke Records',
-    section: 'client',
-    category: 'Music Video',
-    year: 2025,
-    role: 'Editor',
-    summary: 'A visual edit commissioned by Broke Records to build hype for Tiffany Day’s “breakup”.',
-    description: [
-      'Commissioned by Broke Records (New York) for Tiffany Day, and posted on my own accounts to build hype for the release.',
-    ],
-    video: { type: 'tiktok', id: '7569903180159520013' },
-    thumb: 'media/thumbs/tiffany-day-breakup.jpg',
-    thumbPos: '70% 50%',      // keep the lyric text in view
-    preview: '',
-    hue: 300,
-    featured: false,
-  },
-  {
-    id: 'broke-records-tiffany-day-breakup-alt',
-    title: 'Tiffany Day — breakup (Alternate)',
-    client: 'Broke Records',
-    section: 'client',
-    category: 'Music Video',
-    year: 2025,
-    role: 'Editor',
-    summary: 'An alternate visual for Tiffany Day’s “breakup”, made in TouchDesigner and After Effects.',
-    description: [
-      'A second, alternate take on “breakup” for Tiffany Day and Broke Records, built in TouchDesigner and After Effects.',
-    ],
-    video: { type: 'tiktok', id: '7571975212112137527' },
-    thumb: 'media/thumbs/tiffany-day-breakup-alt.jpg',
-    preview: '',
-    hue: 30,
-    featured: false,
-  },
-  {
-    id: 'broke-records-bleecher',
-    title: 'bleecher — Visual Edit',
-    client: 'Broke Records',
-    section: 'client',
-    category: 'Music Video',
-    year: '',
-    role: 'Editor',
-    summary: 'A visual edit for bleecher, commissioned by Broke Records and made in TouchDesigner.',
-    description: [
-      'Commissioned by Broke Records (New York) for bleecher, and posted on my own accounts to build hype for the release. Made in TouchDesigner.',
-    ],
-    video: { type: 'tiktok', id: '7603284132398910733' },
-    thumb: 'media/thumbs/bleecher.jpg',
-    preview: '',
-    hue: 240,
-    featured: false,
-  },
-  {
-    id: 'broke-records-itsbast-forget',
-    title: 'itsbast — gonna make you forget',
-    client: 'Broke Records',
-    section: 'client',
-    category: 'Music Video',
-    year: '',
-    role: 'Editor',
-    summary: 'A vertical visual for itsbast’s “gonna make you forget”, made through Broke Records.',
-    description: [
-      'Made through Broke Records (New York) for itsbast’s “gonna make you forget”, and posted on my own accounts to build hype for the release.',
-    ],
-    video: { type: 'tiktok', id: '7671775930066554126', vertical: true },
-    thumb: 'media/thumbs/itsbast-forget.jpg',
-    preview: '',
-    hue: 320,
-    featured: false,
   },
 ];
 

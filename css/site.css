@@ -378,3 +378,12 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 /* TikTok videos in the popup */
 .lightbox-frame.tiktok, .lightbox-frame.vertical.tiktok { background: #000; }
+
+/* Three home-page panels (Filmmaking, Music Videos, Client Work) side by side on wider screens. */
+@media (min-width: 761px) {
+  .paths { grid-template-columns: repeat(3, 1fr); }
+  .path { min-height: clamp(380px, 42vw, 600px); }
+  .path h2 { font-size: clamp(34px, 4vw, 64px); }
+  .path p { font-size: 15px; }
+}
+.path-body { text-shadow: 0 1px 14px rgba(10,12,16,.75), 0 0 2px rgba(10,12,16,.6); }

@@ -24,7 +24,7 @@
   $('#site-footer').outerHTML = `
     <footer class="site-footer">
       <div class="wrap">
-        <span>© ${new Date().getFullYear()} ${esc(SITE.name)} — ${esc(SITE.location)}</span>
+        <span>© ${new Date().getFullYear()} ${esc(SITE.name)} · ${esc(SITE.location)}</span>
         <div class="socials">
           ${SITE.socials.map((s) => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a>`).join('')}
           <a href="mailto:${esc(SITE.email)}">Email</a>
@@ -130,7 +130,7 @@
         </div>
         <div class="card-info">
           <h3 class="card-title">${esc(p.title)}</h3>
-          <span class="card-meta">${[p.client, p.year].filter(Boolean).map(esc).join(" · ")}</span>
+          <span class="card-meta">${[p.artist || p.client, p.year].filter(Boolean).map(esc).join(" · ")}</span>
         </div>
         <p class="card-summary">${esc(p.summary)}</p>
       </a>`;
@@ -253,7 +253,9 @@
   if (SECTIONS[page]) {
     const s = SECTIONS[page];
     const list = PROJECTS.filter((p) => p.section === page);
-    const [, other] =Object.entries(SECTIONS).find(([k]) => k !== page);
+    // "Also see" points to the next section in menu order (wrapping around).
+    const keys = Object.keys(SECTIONS);
+    const other = SECTIONS[keys[(keys.indexOf(page) + 1) % keys.length]];
 
     // Small label above the page title; leave pageEyebrow empty to hide it.
     if (s.pageEyebrow) $('#page-eyebrow').textContent = s.pageEyebrow;
@@ -282,9 +284,10 @@
           <span class="play-badge"></span>
         </div>
         <div class="reveal">
-          <span class="project-num">${pad(i + 1)} — ${esc(p.category)}</span>
+          <span class="project-num">${pad(i + 1)} · ${esc(p.category)}</span>
           <h2>${esc(p.title)}</h2>
           <dl>
+            ${p.artist ? `<dt>Artist</dt><dd>${esc(p.artist)}</dd>` : ""}
             ${p.client ? `<dt>Client</dt><dd>${esc(p.client)}</dd>` : ""}
             ${p.role ? `<dt>Role</dt><dd>${esc(p.role)}</dd>` : ""}
             ${p.year ? `<dt>Year</dt><dd>${esc(p.year)}</dd>` : ""}
@@ -333,7 +336,7 @@
     $('#contact-form').addEventListener('submit', (e) => {
       e.preventDefault();
       const f = new FormData(e.target);
-      const subject = `Project enquiry — ${f.get('type')}`;
+      const subject = `Project enquiry: ${f.get('type')}`;
       const body = `Name: ${f.get('name')}\nEmail: ${f.get('email')}\nProject type: ${f.get('type')}\nBudget: ${f.get('budget')}\n\n${f.get('message')}`;
       location.href = `mailto:${SITE.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     });
