@@ -92,7 +92,7 @@
     if (SITE.reel.background) {
       const v = document.createElement('video');
       Object.assign(v, { muted: true, loop: true, autoplay: true, playsInline: true, src: SITE.reel.background });
-      v.addEventListener('loadeddata', () => { $('.hero-media').prepend(v); $('.hero-media .ph').remove(); }, { once: true });
+      v.addEventListener('loadeddata', () => { $('.hero-media').prepend(v); $('.hero-media .ph').remove(); $('.hero').classList.add('has-video'); }, { once: true });
       v.load();
     }
     // A showreel button can be added back later: give a button id="watch-reel" and set SITE.reel.full.

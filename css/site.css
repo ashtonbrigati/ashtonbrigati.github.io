@@ -361,3 +361,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .site-footer .socials a { display: inline-block; padding: 10px 0; }
   .cta .mail { display: inline-block; padding: 8px 0 4px; }
 }
+
+/* ---------- Hero without a background video ---------- */
+/* Until media/reel-loop.mp4 exists, the hero is a compact intro; it becomes full-screen once the video loads. */
+.hero:not(.has-video) { min-height: 0; padding-top: clamp(150px, 18vw, 230px); }
+.hero:not(.has-video) .hero-inner { padding-bottom: clamp(24px, 4vw, 48px); }
+.hero:not(.has-video) .hero-scroll { display: none; }
