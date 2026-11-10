@@ -1,27 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My First GitHub Website</title>
-    <!-- 1. Link your CSS file here -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="font.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ashton Brigati — Filmmaker</title>
+  <meta name="description" content="Ashton Brigati — filmmaker, director and editor. Commercial, documentary, narrative and music video work.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preload" href="fonts/Redaction35-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="css/site.css">
 </head>
-<body>
+<body data-page="home">
+  <div id="site-header"></div>
 
-   <!-- Uses Bold class + size & weight set in HTML -->
-    <h1 class="redaction-35-bold" style="font-size: 48px; font-weight: 700; margin-bottom: 12px;">
-        Ashton Brigati
-    </h1>
+  <section class="hero">
+    <div class="hero-media"><div class="ph" style="--h:215"></div></div>
+    <div class="wrap hero-inner">
+      <span class="eyebrow" id="hero-tagline"></span>
+      <h1 class="display"><em>Real</em> stories, told with care.</h1>
+      <div class="hero-actions">
+        <button class="btn btn-solid" id="watch-reel"><span class="play"></span> Watch the reel</button>
+        <a class="btn" href="#paths">Explore the work</a>
+      </div>
+    </div>
+    <span class="hero-scroll">Scroll</span>
+  </section>
 
-    <!-- Uses Regular class + different size & weight set in HTML -->
+  <section id="paths-wrap">
+    <div class="wrap paths" id="paths"></div>
+  </section>
 
-<div class="nav-links">
-    <a href="filmmaking.html" class="redaction-35-regular hover-grey" style="font-size: 18px; font-weight: 400;">
-        Filmmaking
-    </a>
-    <a href="commercial.html" class="redaction-35-regular hover-grey" style="font-size: 18px; font-weight: 400;">
-        Commercial Work
-    </a>
-</div>
+  <div id="previews"></div>
+
+  <section class="section services-band">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">Services</span>
+          <h2 class="display">How I can help.</h2>
+        </div>
+        <a class="link-arrow" href="services.html">All services <span>→</span></a>
+      </div>
+      <div class="svc-list" id="svc-list"></div>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="wrap reveal">
+      <span class="eyebrow">Contact</span>
+      <h2 class="display">Have a project in <em>mind?</em></h2>
+      <div class="hero-actions" style="justify-content:center;margin-bottom:36px">
+        <a class="btn btn-solid" href="contact.html">Start a conversation</a>
+      </div>
+      <a class="mail" data-email></a>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+  <script src="js/content.js"></script>
+  <script src="js/site.js"></script>
 </body>
 </html>

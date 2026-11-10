@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Ashton Brigati</title>
+  <meta name="description" content="Ashton Brigati — filmmaker, director and editor. Commercial, documentary, narrative and music video work.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preload" href="fonts/Redaction35-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body data-page="contact">
+  <div id="site-header"></div>
+
+  <section class="page-head">
+    <div class="wrap">
+      <span class="eyebrow">Contact</span>
+      <h1 class="display">Say hello.</h1>
+      <p class="lede">Tell me a little about what you're making. I usually reply within two working days.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap contact-grid">
+      <div class="contact-info reveal">
+        <span class="eyebrow">Email</span><br>
+        <a class="big-mail" id="contact-mail"></a>
+        <span class="eyebrow">Elsewhere</span>
+        <ul id="contact-socials"></ul>
+      </div>
+      <form class="form reveal" id="contact-form">
+        <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" required autocomplete="name"></div>
+        <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
+        <div class="field"><label for="f-type">Project type</label>
+          <select id="f-type" name="type"><option>Short film / Documentary</option><option>YouTube / Brand content</option><option>Freelance editing</option><option>Something else</option></select>
+        </div>
+        <div class="field"><label for="f-budget">Budget</label>
+          <select id="f-budget" name="budget"><option>Not sure yet</option><option>Under $2k</option><option>$2k – $5k</option><option>$5k – $15k</option><option>$15k+</option></select>
+        </div>
+        <div class="field full"><label for="f-msg">About the project</label><textarea id="f-msg" name="message" required></textarea></div>
+        <button class="btn btn-solid" type="submit">Send message →</button>
+        <p class="form-note">This opens your email app with your message filled in.</p>
+      </form>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+  <script src="js/content.js"></script>
+  <script src="js/site.js"></script>
+</body>
+</html>
