@@ -147,7 +147,7 @@ const PROJECTS = [
     ],
     video: { type: 'tiktok', id: '7603284132398910733' },
     thumb: 'media/thumbs/bleecher.jpg',
-    thumbPos: '8% 50%',      // tall home-page card: show the hand and blue, not the white torso
+    thumbPos: '50% 50%',     // tall home-page card: keep the dancers centred (still and hover clip)
     preview: 'media/previews/liar.mp4',   // 6s silent hover loop (2.5s to 8.8s of the TikTok)
     hue: 240,
     featured: 2,
