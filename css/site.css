@@ -447,3 +447,5 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 @media (hover: none) { .tile-info { background: linear-gradient(180deg, rgba(10,12,16,0) 25%, rgba(10,12,16,.6) 55%, rgba(10,12,16,.94) 100%); } }
 /* Custom hover clips (preview: in content.js) sit above the still so they can fade in over it. */
 .card-media > video { z-index: 2; }
+/* Self-hosted videos in the popup: fit the whole frame on black. */
+.lightbox-frame video { object-fit: contain; background: #000; }

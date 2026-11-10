@@ -145,7 +145,7 @@ const PROJECTS = [
     description: [
       'Commissioned by Broke Records (New York) for bleecher’s “liar” and posted on my own accounts to build hype for the release. Made in TouchDesigner.',
     ],
-    video: { type: 'tiktok', id: '7603284132398910733' },
+    video: { type: 'file', src: 'media/videos/bleecher-liar.mp4', tiktok: '7603284132398910733' },
     thumb: 'media/thumbs/bleecher.jpg',
     homeThumb: 'media/thumbs/bleecher-dancers.jpg', // home-page card still: the dancing pair at 6.5s
     thumbPos: '50% 50%',     // tall home-page card: keep the dancers centred (still and hover clip)
@@ -189,7 +189,7 @@ const PROJECTS = [
     description: [
       'Made through Broke Records (New York) for itsbast’s “gonna make you forget” and posted on my own accounts to build hype for the release.',
     ],
-    video: { type: 'tiktok', id: '7671775930066554126', vertical: true },
+    video: { type: 'file', src: 'media/videos/itsbast-gonna-make-you-forget.mp4', vertical: true, tiktok: '7671775930066554126' },
     thumb: 'media/thumbs/itsbast-forget.jpg',
     preview: '',
     hue: 320,
@@ -210,7 +210,7 @@ const PROJECTS = [
       'Commissioned by Broke Records (New York) for glaive’s “It Is What It Is” and posted on my own accounts to build hype for the release. Built in TouchDesigner.',
       'Flash warning: contains flashing images.',
     ],
-    video: { type: 'tiktok', id: '7568077670219648311' },
+    video: { type: 'file', src: 'media/videos/glaive-it-is-what-it-is.mp4', tiktok: '7568077670219648311' },
     thumb: 'media/thumbs/glaive-iiwii-1.jpg',
     preview: '',
     hue: 330,
@@ -230,7 +230,7 @@ const PROJECTS = [
     description: [
       'An alternate version of my visual for glaive’s “It Is What It Is,” commissioned by Broke Records and built in TouchDesigner.',
     ],
-    video: { type: 'tiktok', id: '7568224492145675533' },
+    video: { type: 'file', src: 'media/videos/glaive-it-is-what-it-is-alt.mp4', tiktok: '7568224492145675533' },
     thumb: 'media/thumbs/glaive-iiwii-2.jpg',
     preview: '',
     hue: 0,
@@ -250,7 +250,7 @@ const PROJECTS = [
     description: [
       'Commissioned by Broke Records (New York) for Tiffany Day and posted on my own accounts to build hype for the release.',
     ],
-    video: { type: 'tiktok', id: '7569903180159520013' },
+    video: { type: 'file', src: 'media/videos/tiffany-day-breakup.mp4', tiktok: '7569903180159520013' },
     thumb: 'media/thumbs/tiffany-day-breakup.jpg',
     thumbPos: '70% 50%',      // keep the lyric text in view
     preview: '',
@@ -271,7 +271,7 @@ const PROJECTS = [
     description: [
       'A second take on “breakup” for Tiffany Day and Broke Records, built in TouchDesigner and After Effects.',
     ],
-    video: { type: 'tiktok', id: '7571975212112137527' },
+    video: { type: 'file', src: 'media/videos/tiffany-day-breakup-alt.mp4', tiktok: '7571975212112137527' },
     thumb: 'media/thumbs/tiffany-day-breakup-alt.jpg',
     preview: '',
     hue: 30,

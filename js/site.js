@@ -69,7 +69,7 @@
   function openVideo(video, title) {
     $('.lightbox-title', lb).textContent = title || '';
     frame.classList.toggle('vertical', !!(video && (video.type === 'instagram' || video.vertical)));
-    frame.classList.toggle('tiktok', !!(video && video.type === 'tiktok'));
+    frame.classList.toggle('tiktok', !!(video && (video.type === 'tiktok' || video.type === 'file')));
     if (video && video.type === 'tiktok') {
       frame.innerHTML = `<iframe src="https://www.tiktok.com/player/v1/${encodeURIComponent(video.id)}?autoplay=1&rel=0&description=0&music_info=1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
     } else if (video && video.type === 'instagram') {
