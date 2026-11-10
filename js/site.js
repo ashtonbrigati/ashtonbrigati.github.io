@@ -95,7 +95,9 @@
       v.addEventListener('loadeddata', () => { $('.hero-media').prepend(v); $('.hero-media .ph').remove(); }, { once: true });
       v.load();
     }
-    $('#watch-reel').addEventListener('click', () => openVideo(SITE.reel.full, 'Showreel'));
+    // A showreel button can be added back later: give a button id="watch-reel" and set SITE.reel.full.
+    const reelBtn = $('#watch-reel');
+    if (reelBtn) reelBtn.addEventListener('click', () => openVideo(SITE.reel.full, 'Showreel'));
 
     const inSection = (key) => PROJECTS.filter((p) => p.section === key);
 
@@ -280,7 +282,7 @@
           <span class="project-num">${pad(i + 1)} — ${esc(p.category)}</span>
           <h2>${esc(p.title)}</h2>
           <dl>
-            <dt>Client</dt><dd>${esc(p.client)}</dd>
+            ${p.client ? `<dt>Client</dt><dd>${esc(p.client)}</dd>` : ""}
             ${p.role ? `<dt>Role</dt><dd>${esc(p.role)}</dd>` : ""}
             ${p.year ? `<dt>Year</dt><dd>${esc(p.year)}</dd>` : ""}
           </dl>

@@ -25,13 +25,13 @@
 
 const SITE = {
   name: 'Ashton Brigati',
-  tagline: 'Filmmaker · Director · Editor',
-  email: 'hello@ashtonbrigati.com',            // TODO: replace with your real email
-  location: 'Los Angeles, CA',                 // TODO: confirm
+  tagline: 'Filmmaker · Director · Camera Operator · Editor',
+  email: 'ashtonbrigati@gmail.com',
+  location: 'Los Angeles, CA',
   socials: [
-    { label: 'Instagram', url: 'https://instagram.com/' },   // TODO
-    { label: 'Vimeo',     url: 'https://vimeo.com/' },       // TODO
-    { label: 'YouTube',   url: 'https://youtube.com/' },     // TODO
+    { label: 'Instagram', url: 'https://www.instagram.com/_aaaaaaaaaarb/' },
+    { label: 'YouTube',   url: 'https://www.youtube.com/@hhttps_who' },
+    { label: 'LinkedIn',  url: 'https://www.linkedin.com/in/ashton-brigati-91a95b249/' },
   ],
   // Showreel: plays in the hero background (muted) and in full when "Watch reel" is clicked.
   reel: {
@@ -73,11 +73,11 @@ const PROJECTS = [
   {
     id: 'because-of-eachother',
     title: 'Because of Eachother',
-    client: 'Independent',
+    client: '',                // leave empty for personal work; set e.g. 'A24' later and a "Client" line appears
     section: 'filmmaking',
     category: 'Short Film',
-    year: '',                 // TODO
-    role: '',                 // TODO e.g. 'Director, Editor'
+    year: 2025,
+    role: 'Director, Editor',
     summary: 'A short film about my adoption process as a teenager.',
     description: [
       'Because of Eachother is a short film about my own adoption, which happened when I was a teenager.',
@@ -93,14 +93,14 @@ const PROJECTS = [
   {
     id: 'buried-in-glass',
     title: 'Buried in Glass',
-    client: 'Independent',
+    client: '',                // leave empty for personal work; set e.g. 'A24' later and a "Client" line appears
     section: 'filmmaking',
     category: 'Documentary',
-    year: '',                 // TODO
-    role: '',                 // TODO
+    year: 2025,
+    role: 'Director, Editor',
     summary: 'A short documentary on the ethics of preservation, told through taxidermy.',
     description: [
-      'Buried in Glass is a short documentary that uses taxidermy to ask what it means to preserve something — and who gets to decide.',
+      'Buried in Glass is a short documentary about what it means to preserve something through any means — told in taxidermy.',
       // TODO: add more — who you filmed, what you found, how it was received.
     ],
     video: { type: 'youtube', id: 'xY8-MV6cBeE' },
@@ -121,7 +121,7 @@ const PROJECTS = [
     client: 'Patreon',
     section: 'client',
     category: 'YouTube',
-    year: '',                 // TODO
+    year: 2026,
     role: 'Camera Operator, Editor',
     summary: 'A Patreon video for the Digital Spaghetti YouTube channel, which I shot and edited.',
     description: [
@@ -142,7 +142,7 @@ const PROJECTS = [
     client: 'Patreon',
     section: 'client',
     category: 'YouTube',
-    year: '',                 // TODO
+    year: 2026,
     role: 'Camera Operator',
     summary: 'A Patreon video for the Digital Spaghetti YouTube channel.',
     description: [
@@ -162,7 +162,7 @@ const PROJECTS = [
     client: 'Patreon',
     section: 'client',
     category: 'YouTube',
-    year: '',                 // TODO
+    year: 2026,
     role: 'Camera Operator',
     summary: 'A Patreon video for the Digital Spaghetti YouTube channel.',
     description: [
@@ -182,11 +182,11 @@ const PROJECTS = [
     client: 'Patreon',
     section: 'client',
     category: 'YouTube',
-    year: '',                 // TODO
+    year: 2026,
     role: 'Video Intern',
     summary: 'My final demo from my video internship at Patreon, published on my own channel.',
     description: [
-      'My final intern demo from my time as a video intern at Patreon. I made it as the closing piece of the internship and published it on my own YouTube channel.',
+      'Created to showcase my intern final demo and what I had accomplished within the Patreon Video Team.',
       // TODO: add a line on what you worked on at Patreon and what the video covers.
     ],
     video: { type: 'youtube', id: 'P87QwEsh3H0' },
@@ -203,7 +203,7 @@ const PROJECTS = [
     client: 'Patreon',
     section: 'client',
     category: 'Instagram',
-    year: '',                 // TODO
+    year: 2026,
     role: 'Editor',
     summary: 'A Patreon reel posted on Instagram by Digital Spaghetti and kamelogs, which I edited.',
     description: [
@@ -222,16 +222,16 @@ const SERVICES = [
   {
     title: 'YouTube & Brand Content',
     blurb: 'Videos for brands and their channels — planned, shot and cut to keep people watching.',
-    deliverables: ['YouTube videos', 'Brand & explainer pieces', 'Cutdowns for social', 'Vertical edits'],
+    deliverables: ['Pre-production to post-production', 'YouTube videos', 'Brand & explainer pieces', 'Cutdowns for social', 'Vertical edits'],
   },
   {
     title: 'Short Film & Documentary',
     blurb: 'Personal, story-driven films from first idea to final cut — directing, shooting and editing.',
-    deliverables: ['Development', 'Directing & cinematography', 'Edit, colour & sound', 'Festival deliverables'],
+    deliverables: ['Pre-production to post-production', 'Directing & cinematography', 'Editing & sound', 'Festival deliverables'],
   },
   {
     title: 'Freelance Editing',
-    blurb: 'Already shot it? I’ll cut it, grade it and get it delivered in every format you need.',
-    deliverables: ['Story & structure edits', 'Colour grading', 'Sound mix', 'Captions & exports'],
+    blurb: 'Already shot it? I’ll cut it into a finished story, with sound that holds it together.',
+    deliverables: ['Story & structure edits', 'Sound mix'],
   },
 ];
