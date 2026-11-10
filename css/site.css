@@ -375,3 +375,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* Make the vertical "Scroll" cue easier to see on laptop/desktop. */
 @media (min-width: 761px) { .hero-scroll { display: flex; align-items: center; gap: 14px; font-size: 12px; letter-spacing: .24em; color: #c3cad6; }
 .hero-scroll::after { content: ""; width: 1px; height: 56px; background: linear-gradient(var(--accent), transparent); } }
+
+/* TikTok videos in the popup */
+.lightbox-frame.tiktok, .lightbox-frame.vertical.tiktok { background: #000; }

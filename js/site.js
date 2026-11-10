@@ -45,7 +45,7 @@
   // Use your own still if set; otherwise YouTube's full-size thumbnail; otherwise the placeholder.
   const thumbOf = (p) => p.thumb || (p.video && p.video.type === 'youtube' ? `https://i.ytimg.com/vi/${p.video.id}/maxresdefault.jpg` : '');
   // Vertical work (Instagram reels, or anything marked vertical: true) gets a tall layout.
-  const isVertical = (p) => p.vertical ?? (p.video && p.video.type === 'instagram');
+  const isVertical = (p) => p.vertical ?? (p.video && (p.video.type === 'instagram' || !!p.video.vertical));
   const still = (p) => thumbOf(p)
     ? `<img src="${esc(thumbOf(p))}" alt="" loading="lazy" style="${p.thumbPos ? `object-position:${esc(p.thumbPos)};--o:${esc(p.thumbPos)};` : ""}${p.thumbZoom ? `--z:${Number(p.thumbZoom)};` : ""}">`
     : `<div class="ph" style="--h:${p.hue ?? 210}"></div>`;
@@ -61,8 +61,11 @@
 
   function openVideo(video, title) {
     $('.lightbox-title', lb).textContent = title || '';
-    frame.classList.toggle('vertical', !!(video && video.type === 'instagram'));
-    if (video && video.type === 'instagram') {
+    frame.classList.toggle('vertical', !!(video && (video.type === 'instagram' || video.vertical)));
+    frame.classList.toggle('tiktok', !!(video && video.type === 'tiktok'));
+    if (video && video.type === 'tiktok') {
+      frame.innerHTML = `<iframe src="https://www.tiktok.com/player/v1/${encodeURIComponent(video.id)}?autoplay=1&rel=0&description=0&music_info=1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+    } else if (video && video.type === 'instagram') {
       frame.innerHTML = `<iframe src="https://www.instagram.com/reel/${encodeURIComponent(video.id)}/embed/" allow="autoplay; encrypted-media; fullscreen" allowfullscreen scrolling="no"></iframe>`;
     } else if (video && video.type === 'youtube') {
       frame.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${esc(video.id)}?autoplay=1&rel=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
