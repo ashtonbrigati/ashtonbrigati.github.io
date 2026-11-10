@@ -26,7 +26,7 @@
 const SITE = {
   name: 'Ashton Brigati',
   tagline: 'Filmmaker · Director · Camera Operator · Editor',
-  email: 'ashtonbrigati@gmail.com',
+  email: 'contact@ashtonbrigati.com',
   location: 'Los Angeles, CA',
   socials: [
     { label: 'Instagram', url: 'https://www.instagram.com/_aaaaaaaaaarb/' },
