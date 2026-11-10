@@ -231,7 +231,7 @@ const SERVICES = [
   },
   {
     title: 'Freelance Editing',
-    blurb: 'Already shot it? I’ll cut it into a finished story, with sound that holds it together.',
+    blurb: 'Already shot it? I’ll cut it into a finished story, with sound and VFX that hold it together.',
     deliverables: ['Story & structure edits', 'Sound design & mixing', 'VFX & compositing'],
   },
 ];
