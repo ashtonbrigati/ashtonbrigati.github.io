@@ -346,3 +346,18 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   font-family: var(--display); font-size: clamp(17px, 1.5vw, 22px); line-height: 1.15;
 }
 .path-label small { font-family: var(--sans); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); }
+
+/* ---------- Phone fixes ---------- */
+@media (max-width: 760px) {
+  /* Keep both cards in a two-project grid at 16:9 (the desktop :last-child 4:5 rule was winning). */
+  .work-grid.n2 .card:first-child .card-media,
+  .work-grid.n2 .card:last-child .card-media { aspect-ratio: 16 / 9; }
+  /* The vertical "Scroll" label crowds the buttons on narrow screens. */
+  .hero-scroll { display: none; }
+  .hero .eyebrow { letter-spacing: .12em; font-size: 11px; }
+  /* Bigger tap targets for small text links. */
+  .link-arrow { padding: 10px 0; }
+  .site-footer .socials { gap: 8px 20px; flex-wrap: wrap; }
+  .site-footer .socials a { display: inline-block; padding: 10px 0; }
+  .cta .mail { display: inline-block; padding: 8px 0 4px; }
+}
