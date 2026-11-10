@@ -88,11 +88,17 @@
     $('.lightbox-close', lb).focus();
   }
   function closeVideo() {
+    delete lb.dataset.fs;
+    if (document.fullscreenElement === lb && document.exitFullscreen) document.exitFullscreen().catch(() => {});
     lb.classList.remove('open');
     document.body.style.overflow = '';
     setTimeout(() => { frame.innerHTML = ''; }, 300);
   }
   lb.addEventListener('click', (e) => { if (e.target === lb || e.target.closest('.lightbox-close')) closeVideo(); });
+  // Leaving full screen (Esc) also closes the video, so one Esc gets you back to the grid.
+  document.addEventListener('fullscreenchange', () => {
+    if (!document.fullscreenElement && lb.dataset.fs && lb.classList.contains('open')) closeVideo();
+  });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && lb.classList.contains('open')) closeVideo(); });
 
   /* ---------- Pages ---------- */
@@ -285,7 +291,25 @@
       $('#filters').hidden = true;
     }
 
-    $('#projects').innerHTML = list.length ? list.map((p, i) => `
+    // Sections with layout: 'grid' (Music Videos) show a wall of thumbnails; hovering shows the details,
+    // clicking plays the video full screen.
+    const grid = s.layout === 'grid';
+    const tile = (p, i) => `
+      <article class="tile${p.description.some((d) => /flash/i.test(d)) ? ' has-flash' : ''}" id="${esc(p.id)}" data-cat="${esc(p.category)}">
+        <div class="tile-media project-media" data-i="${i}" role="button" tabindex="0" aria-label="Play ${esc(p.title)}${p.artist ? ` by ${esc(p.artist)}` : ''}">
+          ${still(p)}
+          <div class="tile-info">
+            <span class="tile-cat">${esc(p.category)}</span>
+            <h2 class="tile-title">${esc(p.title)}</h2>
+            <p class="tile-meta">${[p.artist, p.role, p.year].filter(Boolean).map(esc).join(' · ')}</p>
+            <p class="tile-sum">${esc(p.summary)}</p>
+            ${p.description.some((d) => /flash/i.test(d)) ? '<p class="tile-warn">Flash warning</p>' : ''}
+            <span class="tile-play"><span class="play"></span> Play</span>
+          </div>
+        </div>
+      </article>`;
+    if (grid) $('#projects').classList.add('tile-grid');
+    $('#projects').innerHTML = !list.length ? `<p class="empty">New work coming soon.</p>` : grid ? list.map(tile).join('') : list.map((p, i) => `
       <article class="project${isVertical(p) ? " is-vertical" : ""}" id="${esc(p.id)}" data-cat="${esc(p.category)}">
         <div class="project-media reveal" data-i="${i}" role="button" tabindex="0" aria-label="Play ${esc(p.title)}">
           ${still(p, true)}
@@ -302,17 +326,22 @@
           </dl>
           <div class="project-desc">${p.description.map((d) => `<p>${esc(d)}</p>`).join('')}</div>
         </div>
-      </article>`).join('') : `<p class="empty">New work coming soon.</p>`;
+      </article>`).join('');
 
     $('#filters').addEventListener('click', (e) => {
       const chip = e.target.closest('.chip');
       if (!chip) return;
       document.querySelectorAll('.chip').forEach((c) => c.setAttribute('aria-pressed', c === chip));
-      document.querySelectorAll('.project').forEach((el) => {
+      document.querySelectorAll('.project, .tile').forEach((el) => {
         el.hidden = chip.dataset.cat !== 'All' && el.dataset.cat !== chip.dataset.cat;
       });
     });
-    const play = (el) => { const p = list[el.dataset.i]; openVideo(p.video, p.title); };
+    const play = (el) => {
+      const p = list[el.dataset.i];
+      openVideo(p.video, p.artist ? `${p.title} · ${p.artist}` : p.title);
+      // Grid pages go straight to full screen (the click counts as the required user gesture).
+      if (grid && lb.requestFullscreen) lb.requestFullscreen().then(() => { lb.dataset.fs = '1'; }).catch(() => {});
+    };
     document.querySelectorAll('.project-media').forEach((el) => {
       el.addEventListener('click', () => play(el));
       el.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); play(el); } });

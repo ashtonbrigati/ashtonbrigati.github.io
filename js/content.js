@@ -76,6 +76,7 @@ const SECTIONS = {
   music: {
     title: 'Music Videos',
     page: 'music-videos.html',
+    layout: 'grid',                   // thumbnail wall: hover for details, click to play full screen
     cover: 'glaive-it-is-what-it-is',
     coverImage: 'media/thumbs/music-cover.jpg',     // It Is What It Is (glaive), frame at 0:15.95
     coverPos: '62% 35%',              // keep the red circle in view on the tall panel
