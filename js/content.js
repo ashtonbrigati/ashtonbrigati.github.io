@@ -61,6 +61,18 @@ const SECTIONS = {
     intro: 'Short films and documentaries: personal work about family, identity and what we choose to keep.',
     hue: 228,
   },
+  client: {
+    title: 'Client Work',
+    page: 'client-work.html',
+    cover: 'rocketjump-making-movies',      // which project's still is used on the home-page Client Work panel
+    coverImage: 'media/thumbs/rocketjump-cover.jpg', // Freddie Wong at 3:17 of the RocketJump video (1080p frame)
+    coverLabel: 'RocketJump · Freddie Wong', // text shown over that still ('' = none)
+    eyebrow: 'Client work',
+    pageEyebrow: '',
+    headline: 'Made for the people I work with.',
+    intro: 'Videos for Patreon on YouTube and Instagram, as camera operator and editor.',
+    hue: 205,
+  },
   music: {
     title: 'Music Videos',
     page: 'music-videos.html',
@@ -73,18 +85,6 @@ const SECTIONS = {
     headline: 'Songs, turned into pictures.',
     intro: 'Commissioned visuals for Broke Records artists, plus my own experiments in stop-motion, mixed media and 3D.',
     hue: 300,
-  },
-  client: {
-    title: 'Client Work',
-    page: 'client-work.html',
-    cover: 'rocketjump-making-movies',      // which project's still is used on the home-page Client Work panel
-    coverImage: 'media/thumbs/rocketjump-cover.jpg', // Freddie Wong at 3:17 of the RocketJump video (1080p frame)
-    coverLabel: 'RocketJump · Freddie Wong', // text shown over that still ('' = none)
-    eyebrow: 'Client work',
-    pageEyebrow: '',
-    headline: 'Made for the people I work with.',
-    intro: 'Videos for Patreon on YouTube and Instagram, as camera operator and editor.',
-    hue: 205,
   },
 };
 
