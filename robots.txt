@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /deadcode.html
+
+Sitemap: https://ashtonbrigati.com/sitemap.xml
