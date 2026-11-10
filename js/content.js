@@ -221,12 +221,12 @@ const PROJECTS = [
 const SERVICES = [
   {
     title: 'YouTube & Brand Content',
-    blurb: 'Videos for brands and their channels — planned, shot and cut to keep people watching.',
+    blurb: 'Videos for brands and their channels; planned, shot and cut to keep people watching.',
     deliverables: ['Pre-production to post-production', 'YouTube videos', 'Brand & explainer pieces', 'Cutdowns for social', 'Vertical edits'],
   },
   {
     title: 'Short Film & Documentary',
-    blurb: 'Personal, story-driven films from first idea to final cut — directing, shooting and editing.',
+    blurb: 'Personal, story-driven films from first idea to final cut; directing, shooting and editing.',
     deliverables: ['Pre-production to post-production', 'Directing & cinematography', 'Editing & sound', 'Festival deliverables'],
   },
   {
