@@ -83,7 +83,7 @@ const SECTIONS = {
     coverLabel: 'Broke Records',      // text shown over that still ('' = none)
     eyebrow: 'Music videos',
     pageEyebrow: '',
-    headline: 'Songs, turned into pictures.',
+    headline: 'Turn it up.',
     intro: 'Commissioned visuals for Broke Records artists, plus my own experiments in stop-motion, mixed media and 3D.',
     hue: 300,
   },
@@ -122,8 +122,7 @@ const PROJECTS = [
     role: 'Director, Editor',
     summary: 'A short documentary on the ethics of preservation, told through taxidermy.',
     description: [
-      'Buried in Glass is a short documentary, told through taxidermy, about what it means to preserve something by any means.',
-      // TODO: add more: who you filmed, what you found, how it was received.
+      'Through a visual experiment that cuts between stuffed-animal skins, the soundscape of machines, and the voice of a taxidermist, this visceral documentary examines the preservation of living beings and the act of manipulating the dead.',
     ],
     video: { type: 'youtube', id: 'xY8-MV6cBeE' },
     previewStart: 0,
