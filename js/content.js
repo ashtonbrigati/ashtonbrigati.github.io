@@ -334,6 +334,9 @@ const PROJECTS = [
     previewStart: 20,
     thumb: 'media/thumbs/100-gecs-doritos-fritos.jpg',
     thumbPos: '15% 50%',     // keep the chip in view on the tall home-page card
+    pageThumb: 'media/thumbs/100-gecs-doritos-fritos-page.jpg', // Music Videos page: frame with the text higher up
+    pageThumbPos: '50% 100%',
+    pageThumbZoom: 1.35,      // lifts the "doritos" text above the play button
     preview: '',
     hue: 35,
     featured: true,

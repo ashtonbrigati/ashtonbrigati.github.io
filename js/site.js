@@ -46,9 +46,16 @@
   const thumbOf = (p) => p.thumb || (p.video && p.video.type === 'youtube' ? `https://i.ytimg.com/vi/${p.video.id}/maxresdefault.jpg` : '');
   // Vertical work (Instagram reels, or anything marked vertical: true) gets a tall layout.
   const isVertical = (p) => p.vertical ?? (p.video && (p.video.type === 'instagram' || !!p.video.vertical));
-  const still = (p) => thumbOf(p)
-    ? `<img src="${esc(thumbOf(p))}" alt="" loading="lazy" style="${p.thumbPos ? `object-position:${esc(p.thumbPos)};--o:${esc(p.thumbPos)};` : ""}${p.thumbZoom ? `--z:${Number(p.thumbZoom)};` : ""}">`
-    : `<div class="ph" style="--h:${p.hue ?? 210}"></div>`;
+  // onPage = the section page (wide still with a play button). A project can set pageThumb / pageThumbPos /
+  // pageThumbZoom to use a different still or crop there, without changing its home-page card.
+  const still = (p, onPage = false) => {
+    const src = (onPage && p.pageThumb) || thumbOf(p);
+    const pos = onPage && p.pageThumb ? p.pageThumbPos : (onPage && p.pageThumbPos) || p.thumbPos;
+    const zoom = onPage && (p.pageThumb || p.pageThumbZoom) ? p.pageThumbZoom : p.thumbZoom;
+    return src
+      ? `<img src="${esc(src)}" alt="" loading="lazy" style="${pos ? `object-position:${esc(pos)};--o:${esc(pos)};` : ""}${zoom ? `--z:${Number(zoom)};` : ""}">`
+      : `<div class="ph" style="--h:${p.hue ?? 210}"></div>`;
+  };
 
   /* ---------- Lightbox ---------- */
   const lb = document.createElement('div');
@@ -281,7 +288,7 @@
     $('#projects').innerHTML = list.length ? list.map((p, i) => `
       <article class="project${isVertical(p) ? " is-vertical" : ""}" id="${esc(p.id)}" data-cat="${esc(p.category)}">
         <div class="project-media reveal" data-i="${i}" role="button" tabindex="0" aria-label="Play ${esc(p.title)}">
-          ${still(p)}
+          ${still(p, true)}
           <span class="play-badge"></span>
         </div>
         <div class="reveal">
