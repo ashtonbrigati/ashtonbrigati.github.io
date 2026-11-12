@@ -141,7 +141,7 @@ const PROJECTS = [
     summary: 'A son meets his father in a void before addiction takes his life.',
     tags: ['VFX'],          // extra tags shown next to the category
     description: [
-      'A son who grew up without his father finds himself in a strange space, face to face with the man his father was before addiction took over his life and ended it.',
+      'A son who grew up without his father finds himself in a strange space, face to face with his father before addiction took over his life and ended it.',
     ],
     video: { type: 'youtube', id: '3-Z-bXFAOqM' },
     previewStart: 0,
