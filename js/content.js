@@ -57,7 +57,7 @@ const SECTIONS = {
     coverImage: 'media/thumbs/filmmaking-cover.jpg', // Because of Eachother, candle at 1:45 (4K frame)
     eyebrow: 'Filmmaking',
     pageEyebrow: '',                  // small label above the big title on the page (empty = hidden)
-    headline: 'Stories I needed to tell.',
+    headline: 'Stories that needed telling.',
     intro: 'Short films and documentaries: personal work about family, identity and what we choose to keep.',
     hue: 228,
   },
@@ -128,6 +128,26 @@ const PROJECTS = [
     thumb: 'media/thumbs/buried-in-glass.jpg',   // 4K frame from 1:44
     preview: '',
     hue: 195,
+    featured: true,
+  },
+  {
+    id: 'interstice',
+    title: 'Interstice',
+    client: '',                // leave empty for personal work
+    section: 'filmmaking',
+    category: 'Short Film',
+    year: 2025,
+    role: 'Director, Editor, VFX',
+    summary: 'A son meets his father in the space between — before addiction takes his life.',
+    description: [
+      'Interstice — an intervening space. A son who grew up without his father finds himself in a strange space between worlds, face to face with the man his father was before addiction took over his life and ended it.',
+      'The film doubles as a VFX showpiece, with the effects built to carry the story through that in-between space.',
+    ],
+    video: { type: 'youtube', id: '3-Z-bXFAOqM' },
+    previewStart: 0,
+    thumb: '',                 // uses the YouTube thumbnail for now
+    preview: '',
+    hue: 240,
     featured: true,
   },
 
