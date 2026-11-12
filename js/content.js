@@ -138,10 +138,10 @@ const PROJECTS = [
     category: 'Short Film',
     year: 2025,
     role: 'Director, Editor, VFX',
-    summary: 'A son meets his father in the space between — before addiction takes his life.',
+    summary: 'A son meets his father in a void before addiction takes his life.',
+    tags: ['VFX'],          // extra tags shown next to the category
     description: [
-      'Interstice — an intervening space. A son who grew up without his father finds himself in a strange space between worlds, face to face with the man his father was before addiction took over his life and ended it.',
-      'The film doubles as a VFX showpiece, with the effects built to carry the story through that in-between space.',
+      'A son who grew up without his father finds himself in a strange space, face to face with the man his father was before addiction took over his life and ended it.',
     ],
     video: { type: 'youtube', id: '3-Z-bXFAOqM' },
     previewStart: 0,

@@ -138,7 +138,7 @@
         <div class="card-media">
           ${still(p.homeThumb ? { ...p, thumb: p.homeThumb } : p)}
           ${p.preview ? `<video muted loop playsinline preload="none" data-src="${esc(p.preview)}"${p.thumbPos ? ` style="object-position:${esc(p.thumbPos)}"` : ''}></video>` : ''}
-          <span class="card-tag">${esc(p.category)}</span>
+          <span class="card-tags">${[p.category, ...(p.tags || [])].map((t) => `<span class="card-tag">${esc(t)}</span>`).join("")}</span>
           <span class="card-view">View project →</span>
         </div>
         <div class="card-info">
@@ -318,7 +318,7 @@
           <span class="play-badge"></span>
         </div>
         <div class="reveal">
-          <span class="project-num">${pad(i + 1)} · ${esc(p.category)}</span>
+          <span class="project-num">${pad(i + 1)} · ${esc(p.category)}${(p.tags || []).map((t) => ` · ${esc(t)}`).join("")}</span>
           <h2>${esc(p.title)}</h2>
           <dl>
             ${p.artist ? `<dt>Artist</dt><dd>${esc(p.artist)}</dd>` : ""}

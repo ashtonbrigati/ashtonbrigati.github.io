@@ -449,3 +449,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .card-media > video { z-index: 2; }
 /* Self-hosted videos in the popup: fit the whole frame on black. */
 .lightbox-frame video { object-fit: contain; background: #000; }
+
+/* Extra tags on cards (e.g. VFX) sit in a row with the category tag */
+.card-tags { position: absolute; left: 16px; top: 16px; z-index: 2; display: flex; gap: 6px; }
+.card-tags .card-tag { position: static; }
